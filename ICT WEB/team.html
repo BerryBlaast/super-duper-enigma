@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>Team Members</title>
+<style>
+    body {
+        background-position: center; 
+        background-attachment: fixed; 
+        background-image: url("bgblur.jpg");
+        background-size: 100% 100%;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    .team-intro {
+        display: flex; /* Use flexbox for alignment */
+        flex-direction: column; /* Stack title and description vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text */
+        border: 2px solid green; /* Change border color to green */
+        padding: 20px; /* Add padding for spacing */
+        border-radius: 10px; /* Optional: round the corners */
+        background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+        box-shadow: 0 4px 10px rgba(0, 128, 0, 0.5); /* Add shadow effect */
+        margin-bottom: 20px; /* Space below the intro section */
+    }
+
+    .team-container {
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        gap: 50px; 
+        margin-top: 20px;
+        justify-content: center; /* Center the items */
+    }
+
+    .team-member {
+        display: flex; /* Use flexbox for alignment */
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text for each member */
+        border: 2px solid green; /* Change border color to green */
+        padding: 20px; /* Add padding for spacing */
+        border-radius: 10px; /* Optional: round the corners */
+        background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+        flex: 1 1 300px; /* Allow flex items to grow and shrink, with a base width of 300px */
+        max-width: 300px; /* Set a maximum width for each member box */
+        box-shadow: 0 4px 10px rgba(0, 128, 0, 0.5); /* Add shadow effect */
+        transition: transform 0.3s; /* Smooth transition for hover effect */
+        cursor: pointer; /* Change cursor to pointer on hover */
+    }
+
+    .team-member:hover {
+        transform: scale(1.05); /* Scale up on hover */
+    }
+
+    .more-info {
+        visibility: hidden; /* Initially hidden */
+        opacity: 0; /* Start with opacity 0 */
+        margin-top: 10px; /* Space above the more info section */
+        background-color: rgba(0, 0, 0, 0.7); /* Background for the dropdown */
+        padding: 10px; /* Padding for the dropdown */
+        border-radius: 5px; /* Round corners */
+        border: 1px solid green; /* Border for the dropdown */
+        transition: visibility 0s, opacity 0.3s ease; /* Transition for visibility and opacity */
+    }
+
+    .more-info.show {
+        visibility: visible; /* Make visible when the class is added */
+        opacity: 1; /* Fade in */
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%; /* Makes the image circular */
+        border: 2px solid black;
+        margin-bottom: 10px; /* Add space between image and text */
+    }
+
+    .nav-bar button {
+        cursor: pointer;
+        border: 1px solid #8f703b;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        height: 60px;
+        width: 400px;
+        color: #FFFFFF;
+        font-size: 1.5em;
+        box-shadow: 0 4px 8px rgba(0, 255, 0, 0.5);
+        border-radius: 30px;
+        margin: 10px;
+        padding: 0px;
+        transition: transform 0.3s;
+    }
+
+    .nav-bar button:hover {
+        transform: scale(1.1);
+    }
+</style>
+</head>
+<body>
+    <div id="main-section" class="team-intro">
+        <h1>Meet Our Team</h1>
+    </div>
+    <br>
+    <div id="project-section" class="team-container">
+        <div class="team-member" onclick="toggleInfo('info-usman')">
+            <img src="usman.jpg">
+            <b>Muhammad Usman</b>
+            
+            <div id="info-usman" class="more-info">Detailed description about Muhammad Usman.</div>
+        </div>
+        <div class="team-member" onclick="toggleInfo('info-mariyam')">
+            <img src="mariyam.jpg">
+            <b>Mariyam Shams</b>
+        
+            <div id="info-mariyam" class="more-info">Detailed description about Mariyam Shams.</div>
+        </div>
+        <div class="team-member" onclick="toggleInfo('info-arifa')">
+            <img src="arifa.jpg">
+            <b>Arifa Eman Asif</b>
+            
+            <div id="info-arifa" class="more-info">Detailed description about Arifa Eman Asif.</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleInfo(infoId) {
+            const allInfoElements = document.querySelectorAll('.more-info');
+            allInfoElements.forEach(element => {
+                if (element.id !== infoId) {
+                    element.classList.remove('show'); // Hide other info sections
+                }
+            });
+
+            const infoElement = document.getElementById(infoId);
+            infoElement.classList.toggle('show'); // Toggle the selected info section
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the section
+        }
+    </script>
+
+    <div class="nav-bar" style="position: fixed; bottom: 0; width: 100%;">
+        <center>
+            <button onclick="location.href='ict homepagge.html';">ICT Homepage</button>&nbsp;&nbsp;&nbsp;
+            <button onclick="location.href='projects.html';">Projects</button>&nbsp;&nbsp;&nbsp;
+        </center>
+    </div>
+</body>
+</html>
