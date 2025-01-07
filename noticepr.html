@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>Project Report</title>
+</head>
+<style>
+body{
+background-position=center; background-attachment=fixed; background-image:url("lightbg.jpg");background-size: 100% 100%;
+}
+  body {
+    font-family: "Times New Roman", Times, serif; /* Sets Times New Roman as the font */
+    line-height: 1.6; /* Adds space between lines for readability */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Optional: Adds a subtle background color */
+  }
+  img {
+    width: 70%; /* Adjusts the image to fit the available width */
+    max-width: 400px; /* Sets a maximum width for the image */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 10px; /* Rounds the corners of the image */
+    object-fit: cover; /* Ensures the image fills the area proportionally */
+  }
+</style>
+
+<body text=white>
+<center><h1>Project Report</h1></center>
+
+<h2><b><center>Electronic Notice Board Using Arduino</center></b></h2>
+
+<h2><b>Introduction</b></h2>
+The electronic notice board is an innovative solution designed to simplify communication by <br>
+displaying messages wirelessly. Using Arduino Uno, HC-05 Bluetooth module, and a 16x2 LED display,<br>our project allows users to update the notice board remotely through a Bluetooth connection.<br>
+<img src="setup.jpg">
+
+<h2><b>Objective</b></h2>
+<p>The objective of this project is to create a cost-effective and efficient electronic notice board capable <br>of displaying messages sent via Bluetooth from a laptop or smartphone.</p>
+<img src="led.jpg">
+
+<h2><b>Components</b></h2>
+<ul>
+<li><b>Arduino Uno:</b> Microcontroller to process input and output.</li>
+<li><b>Bluetooth HC-05:</b> Enables wireless communication.</li>
+<li><b>16x2 LED Display:</b> Shows the messages sent by the user.</li>
+<li><b>Potentiometer:</b> Adjusts the display contrast.</li>
+<li><b>Breadboard and Jumper Wires:</b> Provides connectivity for components.</li>
+</ul>
+<img src="components.webp">
+
+<h2><b>Circuit Diagram</b></h2>
+<p>The connections for the project are as follows:<br>
+- HC-05 Bluetooth: RX to Arduino TX, TX to Arduino RX.<br>
+- LED Display: Connected to digital pins of Arduino.<br>
+- Potentiometer: Adjusts LED display contrast.</p>
+<img src="circuit.png">
+
+<h2><b>Steps Involved</b></h2>
+<h3><b>Step 1: Setting Up the Components</b></h3>
+<p>We placed all components on the breadboard and ensured proper alignment.</p>
+
+<h3><b>Step 2: Making Connections</b></h3>
+<p>Jumper wires were used to connect the Arduino, Bluetooth module, LED display, and potentiometer as per the circuit diagram.</p>
+<img src="closeup.jpg">
+
+
+<h3><b>Step 3: Uploading the Code</b></h3>
+<p>We wrote a program using the Arduino IDE, incorporating the `LiquidCrystal` library for controlling the LED display. The code was uploaded to the Arduino Uno.</p>
+<img src="code.jpg">
+
+<h3><b>Step 4: Testing the Setup</b></h3>
+<p>The HC-05 module was paired with a laptop, and messages were sent via a serial monitor to test display functionality.</p>
+<img src="msg.jpg">
+
+<h2><b>Results</b></h2>
+<p>The electronic notice board successfully displayed messages sent via Bluetooth. The system is user-friendly, portable, and cost-effective.</p>
+<img src="final.jpg">
+
+<h2><b>Conclusion</b></h2>
+<p>This project demonstrates how simple components can be used to create a functional and practical solution for real-world problems. Future improvements could include integrating scrolling text and enabling multiple user access.</p>
+
+
+</body>
+</html>
+
